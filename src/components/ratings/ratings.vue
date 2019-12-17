@@ -1,15 +1,13 @@
 <template>
     <div>
-        评论
+        评论导航
     </div>
 </template>
 
 <script>
 export default {
-    name:'ratings'
+  name: 'ratings'
 }
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

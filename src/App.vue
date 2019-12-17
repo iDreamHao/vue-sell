@@ -1,17 +1,20 @@
 <template>
-  <div id="app" >
-      <v-header></v-header>
-    <div class="tab">
-    <div class="tab-item">
-      <a >商品</a>
+  <div id="app">
+    <v-header ></v-header>
+    <div class="tab border-1px">
+      <div class="tab-item">
+        <router-link to="/goods">商品</router-link>
       </div>
       <div class="tab-item">
-         <a >评论</a>
+        <router-link to="/ratings">评论</router-link>
       </div>
       <div class="tab-item">
-        <a >商家</a>
+        <router-link to="/seller">商家</router-link>
       </div>
     </div>
+    <keep-alive>
+      <router-view ></router-view>
+    </keep-alive>
   </div>
 </template>
 

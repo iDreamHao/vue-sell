@@ -1,15 +1,13 @@
 <template>
     <div>
-        商家
+        商家导航
     </div>
 </template>
 
 <script>
 export default {
-    name:'seller'
+  name: 'seller'
 }
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>
