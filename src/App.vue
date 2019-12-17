@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header ></v-header>
+    <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods">商品</router-link>
@@ -20,10 +20,31 @@
 
 <script>
 import Header from './components/header/header'
+import axios from 'axios'
+const ERR_OK = 0
 export default {
   name: 'App',
+  data() {
+    return {
+      seller:{}
+    }
+  },
   components: {
     'v-header': Header
+  },
+  mounted() {
+    this.getHeaderData()
+  },
+  methods:{
+    getHeaderData() {
+      axios.get('/api/seller')
+      .then((res)=>{
+       if(res.data.errno===ERR_OK){
+         this.seller = res.data.data
+         console.log(this.seller)
+       }
+      })
+    }
   }
 }
 </script>
