@@ -51,6 +51,7 @@ export default {
   .header
     color:#fff
     position relative
+    overflow hidden
     .content-wrapper
       position:relative
       padding:24px 18px 12px 24px
