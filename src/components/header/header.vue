@@ -67,33 +67,33 @@
 </template>
 
 <script>
-import star from 'components/star/star';
+import star from 'components/star/star'
 export default {
   name: 'Header',
-  props:{
-    seller:{
-      type:Object
+  props: {
+    seller: {
+      type: Object
     }
   },
-  data() {
+  data () {
     return {
-      detailShow:false
+      detailShow: false
     }
   },
-  methods:{
-    showDetail(){
+  methods: {
+    showDetail () {
       this.detailShow = true
     },
-     hideDetail() {
-        this.detailShow = false;
-      }
-  },
-    created() {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-    },
-     components: {
-      star
+    hideDetail () {
+      this.detailShow = false
     }
+  },
+  created () {
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+  },
+  components: {
+    star
+  }
 }
 </script>
 
@@ -112,7 +112,7 @@ export default {
         vertical-align:top
         img
          border-radius:2px
-      .content 
+      .content
         display:inline-block
         margin-left:16px
         .title
@@ -120,28 +120,28 @@ export default {
           .brand
            display:inline-block
            vertical-align:top
-           width:30px 
+           width:30px
            height:18px
            bg-image('images/brand')
            background-size:30px 18px
            background-repeat:no-repeat
           .name
-            margin-left:6px 
+            margin-left:6px
             font-size:16px
             line-height 18px
             font-weight bold
         .description
-          margin-bottom:10px 
+          margin-bottom:10px
           line-height:12px
           font-size:12px
         .support
-          .icon 
+          .icon
            display:inline-block
            vertical-align:top
-           width:12px 
-           height:12px 
+           width:12px
+           height:12px
            margin-right:4px
-           background-size:12px 12px 
+           background-size:12px 12px
            background-repeat:no-repeat
            &.decrease
               bg-image('images/decrease_1')
@@ -156,7 +156,7 @@ export default {
           .text
             line-height: 12px
             font-size: 10px
-      .support-count 
+      .support-count
         position: absolute
         right: 12px
         bottom: 14px
@@ -208,10 +208,10 @@ export default {
       height: 100%
       z-index: -1
       filter: blur(10px)
-    .detail 
+    .detail
       position:fixed
       z-index:100
-      width:100% 
+      width:100%
       height:100%
       overflow: auto
       top:0
@@ -226,9 +226,9 @@ export default {
         background: rgba(7, 17, 27, 0)
       .detail-wrapper
         width: 100%
-        min-height:100% 
+        min-height:100%
         .detail-main
-          margin-top:64px 
+          margin-top:64px
           padding-bottom:64px
           .name
             line-height: 16px

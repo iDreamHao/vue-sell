@@ -24,26 +24,25 @@ import axios from 'axios'
 const ERR_OK = 0
 export default {
   name: 'App',
-  data() {
+  data () {
     return {
-      seller:{}
+      seller: {}
     }
   },
   components: {
     'v-header': Header
   },
-  mounted() {
+  mounted () {
     this.getHeaderData()
   },
-  methods:{
-    getHeaderData() {
+  methods: {
+    getHeaderData () {
       axios.get('/api/seller')
-      .then((res)=>{
-       if(res.data.errno===ERR_OK){
-         this.seller = res.data.data
-         console.log(this.seller)
-       }
-      })
+        .then((res) => {
+          if (res.data.errno === ERR_OK) {
+            this.seller = res.data.data
+          }
+        })
     }
   }
 }
