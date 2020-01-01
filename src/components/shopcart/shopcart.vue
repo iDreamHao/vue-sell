@@ -20,17 +20,17 @@
 
 <script>
 export default {
-  name: "shopcart",
+  name: 'shopcart',
   props: {
     selectFoods: {
       type: Array,
-      default() {
+      default () {
         return [
           {
             price: 10,
             count: 2
           }
-        ];
+        ]
       }
     },
     deliveryPrice: {
@@ -43,39 +43,39 @@ export default {
     }
   },
   computed: {
-    totalPrice() {
-      let total = 0;
+    totalPrice () {
+      let total = 0
       this.selectFoods.forEach(food => {
-        total += food.price * food.count;
-      });
-      return total;
+        total += food.price * food.count
+      })
+      return total
     },
-    totalCount() {
-      let count = 0;
+    totalCount () {
+      let count = 0
       this.selectFoods.forEach(food => {
-        count += food.count;
-      });
-      return count;
+        count += food.count
+      })
+      return count
     },
-    payDesc() {
+    payDesc () {
       if (this.totalPrice === 0) {
-        return `￥${this.minPrice}元起送`;
+        return `￥${this.minPrice}元起送`
       } else if (this.totalPrice < this.minPrice) {
-        let diff = this.minPrice - this.totalPrice;
-        return `还差￥${diff}元起送`;
-      }else{
+        let diff = this.minPrice - this.totalPrice
+        return `还差￥${diff}元起送`
+      } else {
         return '去结算'
       }
     },
-    payClass(){
-      if(this.totalPrice<this.minPrice){
+    payClass () {
+      if (this.totalPrice < this.minPrice) {
         return 'not-enough'
-      }else{
+      } else {
         return 'enough'
       }
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -186,7 +186,7 @@ export default {
         font-weight: 700;
         background: #2b333b;
         &.not-enough {
-          background:#2b333b 
+          background:#2b333b
           }
         &.enough {
           background: #00b43c
